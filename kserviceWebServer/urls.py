@@ -20,8 +20,8 @@ from login import views as login
 from imageLoader import views as imageLoader
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("login", login.login,name='login'),
+    # path("admin/", admin.site.urls),
+    # path("login", login.login,name='login'),
     path("imageLoader", imageLoader.imageDownload ,name='imageLoader'),
     path("jsonImages", imageLoader.jsonFiles ,name='jsonFiles'),
 ]
