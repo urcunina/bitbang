@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-i$)lie*b!i(913f(=trzrrowq$l(6tba@4uh3-yy*=y(cu(#-r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["kservice.com.co","localhost"]
+ALLOWED_HOSTS = ["kservice.com.co","localhost","127.0.0.1"]
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "login",
     "imageLoader",
+    "complemedica",
 ]
 
 MIDDLEWARE = [

@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path
 from login import views as login
 from imageLoader import views as imageLoader
+from complemedica import views as complemedica
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
     # path("login", login.login,name='login'),
     path("imageLoader", imageLoader.imageDownload ,name='imageLoader'),
     path("jsonImages", imageLoader.jsonFiles ,name='jsonFiles'),
+    path("complemedica/imageLoader", complemedica.imageDownload ,name='imageLoader'),
+    path("complemedica/jsonImages", complemedica.jsonFiles ,name='jsonFiles'),
 ]
