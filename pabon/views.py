@@ -24,7 +24,7 @@ def get_ip_from_domain():
 
 async def imageDownload(request):
     filename = request.GET.get('filename', "")
-    image_path = os.path.join(settings.BASE_DIR, 'imageLoader/static/img', filename)
+    image_path = os.path.join(settings.BASE_DIR, 'pabon/static/img', filename)
 
     async def file_iterator(path, chunk_size=8192):
         async with aiofiles.open(path, 'rb') as f:
@@ -37,7 +37,7 @@ async def imageDownload(request):
     return StreamingHttpResponse(file_iterator(image_path), content_type="image/jpeg")
 
 def jsonFiles(request):
-    dir_list = os_sorted(os.listdir(str(settings.BASE_DIR)+'/imageLoader/static/img'))
+    dir_list = os_sorted(os.listdir(str(settings.BASE_DIR)+'/pabon/static/img'))
     auxString=''
     for sa in range(0,len(dir_list)):
         if sa==0:
@@ -48,6 +48,6 @@ def jsonFiles(request):
     context= {
                 'imagenes' : auxString,
                 'ipResolve': get_ip_from_domain(),
-                'operadores': "kservice-1@kservice.com.co"
+                'operadores': "pabon-1@kservice.com.co"
             }
     return JsonResponse(context)

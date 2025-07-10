@@ -19,6 +19,7 @@ from django.urls import path
 from login import views as login
 from imageLoader import views as imageLoader
 from complemedica import views as complemedica
+from pabon import views as pabon
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
@@ -27,4 +28,6 @@ urlpatterns = [
     path("jsonImages", imageLoader.jsonFiles ,name='jsonFiles'),
     path("complemedica/imageLoader", complemedica.imageDownload ,name='imageLoader'),
     path("complemedica/jsonImages", complemedica.jsonFiles ,name='jsonFiles'),
+    path("pabon/imageLoader", pabon.imageDownload ,name='imageLoader'),
+    path("pabon/jsonImages", pabon.jsonFiles ,name='jsonFiles'),
 ]
