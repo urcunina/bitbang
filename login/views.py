@@ -6,6 +6,12 @@ from django.shortcuts import redirect
 from  django.http import HttpRequest as request
 from django.contrib.auth.models import UserManager
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logoutFun(request):
+    logout(request)  
+    return redirect('/login')
 
 async def login(request):
 
@@ -22,8 +28,7 @@ async def login(request):
                 context= {
                 'message': auser,
                 }
-                return redirect("/home")
-                return render(request, 'pages/login.html', context)
+                return redirect("/imagemanager")
             else:
                 context= {
                 'message': "Nombre de usuario o contraseña incorrecta",

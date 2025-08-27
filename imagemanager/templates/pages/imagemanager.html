@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
+  <link rel="stylesheet" href="{% static 'css/imagemanager_style.css' %}" type="text/css">
+
+</head>
+
+<body>
+  <div class="cabecera">
+    <img src="{% static 'img/tele1.jpg' %}" alt="Logo Teleperformance" class="logo">
+    <span class="texttitulo"> Teleperformance</span>
+    <button class="btn-derecha" onclick="abrirModal()">
+      🚀 Subir imagen
+    </button>
+    <button class="btn-logout" onclick="logout()">
+      Logout
+    </button>
+  </div>
+
+  <div class="galeria">
+    {{ imagenes|safe  }}
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>Selecciona una imagen</h2>
+      <input type="file" id="fileInput" accept="image/*" onchange="previsualizarImagen(event)">
+      <div id="preview"></div>
+      <div>
+        <button class="btn btn-primary" onclick="confirmarImagen()">Confirmar</button>
+        <button class="btn btn-secondary" onclick="cerrarModal()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'js/imagemanager_script.js' %}"></script>
+</body>
+
+</html>

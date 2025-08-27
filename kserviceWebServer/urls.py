@@ -21,10 +21,18 @@ from imageLoader import views as imageLoader
 from complemedica import views as complemedica
 from pabon import views as pabon
 from teleperformance import views as teleperformance
+from imagemanager import views as imagemanager
 
 urlpatterns = [
-    # path("admin/", admin.site.urls),
-    # path("login", login.login,name='login'),
+    path("admin/", admin.site.urls),
+    path("login", login.login,name='login'),
+    path("logout", login.logoutFun ,name='logout'),
+   
+    path("imagemanager", imagemanager.imagemanager ,name='imagemanager'),
+
+    path("uploadImage", imagemanager.uploadImage ,name='uploadImage'),
+    path("deleteItem", imagemanager.deleteItem ,name='deleteItem'),
+
     path("imageLoader", imageLoader.imageDownload ,name='imageLoader'),
     path("jsonImages", imageLoader.jsonFiles ,name='jsonFiles'),
     path("complemedica/imageLoader", complemedica.imageDownload ,name='imageLoader'),
