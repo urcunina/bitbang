@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "imageLoader",
     "complemedica",
     "pabon",
+    "teleperformance",
 ]
 
 MIDDLEWARE = [
