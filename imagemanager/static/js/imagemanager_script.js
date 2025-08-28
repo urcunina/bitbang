@@ -57,6 +57,7 @@ function confirmarImagen() {
       .then(data => {
         alert("Imagen subida correctamente: " + data.filename);
         cerrarModal();
+        window.location.href = '/imagemanager'; // o a la página que quieras
       })
       .catch(error => {
         console.error("Error al subir la imagen:", error);

@@ -59,19 +59,21 @@ def uploadImage(request):
 # @login_required
 async def imagemanager(request):
     images=jsonFiles()
-    print(images)
-    url=""
-    for i in range(0, len(images.split(','))):
-        if i !=0:
-            url=url+","+baseUrl+images.split(',')[i]
-        else:
-             url=baseUrl+images.split(',')[i]
-    print(url)
-    # Creamos el HTML con las imágenes
     html=""
-    for i in range(0,len(url.split(','))):
-         html+=objetoImagen(url.split(',')[i],i)
-    print(html)
+    if images!='':
+        print(images)
+        url=""
+        for i in range(0, len(images.split(','))):
+            if i !=0:
+                url=url+","+baseUrl+images.split(',')[i]
+            else:
+                url=baseUrl+images.split(',')[i]
+        print(url)
+        # Creamos el HTML con las imágenes
+        
+        for i in range(0,len(url.split(','))):
+            html+=objetoImagen(url.split(',')[i],i)
+        print(html)
          
     if request.method == 'GET':
                 context= {
